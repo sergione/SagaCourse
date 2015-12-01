@@ -59,6 +59,9 @@
   <ItemGroup>
     <Compile Include="FedEx.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ShippingSaga.cs" />
+    <Compile Include="StartShippingCommand.cs" />
+    <Compile Include="StartShippingHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

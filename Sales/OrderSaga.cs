@@ -18,18 +18,20 @@ namespace Sales
         {
             Data.OrderId = message.OrderId;
             Console.WriteLine("Handle Start Order:" + Data.OrderId);
-            RequestTimeout<TimeoutData>(new TimeSpan(0, 0, 30));
+            RequestTimeout<TimeoutData>(new TimeSpan(0, 0, 20));
         }
 
         public void Timeout(TimeoutData timeoutData)
         {
-            Console.WriteLine("Order abandoned");
+            Console.WriteLine("Order abandoned: " + Data.OrderId);
             var orderAbandoned = new OrderAbandoned()
             {
                 OrderId = Data.OrderId
             };
 
             Bus.Publish(orderAbandoned);
+
+            MarkAsComplete();
         }
 
         public void Handle(PlaceOrder message)
@@ -41,6 +43,8 @@ namespace Sales
             };
 
             Bus.Publish(orderPlaced);
+
+            MarkAsComplete();
         }
 
         public void Handle(CancelOrder message)
@@ -52,6 +56,8 @@ namespace Sales
             };
 
             Bus.Publish(orderCanceled);
+
+            MarkAsComplete();
         }
 
         protected override void ConfigureHowToFindSaga(SagaPropertyMapper<OrderSagaData> mapper)
@@ -64,6 +70,7 @@ namespace Sales
 
     public class OrderSagaData : ContainSagaData
     {
+        [Unique]
         public virtual string OrderId { get; set; }
     }
 }
