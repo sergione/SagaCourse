@@ -39,7 +39,10 @@ namespace Sales
             Console.WriteLine("Handle Place Order: " +  Data.OrderId);
             var orderPlaced = new OrderPlaced
             {
-                OrderId = Data.OrderId
+                OrderId = Data.OrderId,
+                CustomerId = message.CustomerId,
+                Amount = message.OrderValue
+
             };
 
             Bus.Publish(orderPlaced);
@@ -72,5 +75,7 @@ namespace Sales
     {
         [Unique]
         public virtual string OrderId { get; set; }
+
+        public virtual string CustomerId { get; set; }
     }
 }

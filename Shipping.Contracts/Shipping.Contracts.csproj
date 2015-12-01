@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75C8239C-E97D-4340-B6B3-B033B1FE5E02}</ProjectGuid>
+    <ProjectGuid>{88A0540E-69C2-42A6-9BFF-57195B4D5CD7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CustomerCare.Contracts</RootNamespace>
-    <AssemblyName>CustomerCare.Contracts</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>Shipping.Contracts</RootNamespace>
+    <AssemblyName>Shipping.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -44,9 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerDemoted.cs" />
-    <Compile Include="CustomerMadePreferred.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShipWithFedex.cs" />
+    <Compile Include="ShipWithUps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

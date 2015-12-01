@@ -50,9 +50,21 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShipWithUpsHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shipping.Contracts.Ups\Shipping.Contracts.Ups.csproj">
+      <Project>{29b8718f-f1cc-4a09-9b39-4a5f0c8d0790}</Project>
+      <Name>Shipping.Contracts.Ups</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shipping.Contracts\Shipping.Contracts.csproj">
+      <Project>{88a0540e-69c2-42a6-9bff-57195b4d5cd7}</Project>
+      <Name>Shipping.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

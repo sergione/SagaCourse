@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerMadePreferredHandler.cs" />
     <Compile Include="Messages\CancelOrder.cs" />
     <Compile Include="Messages\IOrderCommand.cs" />
     <Compile Include="Messages\PlaceOrder.cs" />
